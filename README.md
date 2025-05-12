@@ -1,4 +1,4 @@
-# Symfony API Platform + React Starter
+# Nearby Product API – Symfony + React Demo
 
 A modern, secure, and production-ready starter kit combining Symfony API Platform with React frontend, featuring best practices in security, testing, and containerization.
 
@@ -96,6 +96,16 @@ Access the API documentation at:
 ```
 http://localhost:8000/api/docs
 ```
+## 🗺️ Frontend Demo (Nearby Search with Map)
+
+The frontend allows:
+
+- User login via JWT
+- Fetching products via public API
+- Using browser geolocation to fetch nearby products
+- Displaying products on an interactive Leaflet map
+
+📷 *Screenshots coming soon…*
 
 ## 🏗️ Project Structure
 
@@ -122,6 +132,8 @@ http://localhost:8000/api/docs
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+Created by [Kimana Misago](https://kimana.dev)  
+GitHub: [@kimitoshikurosawa](https://github.com/kimitoshikurosawa)
 
 ## 📝 License
 
