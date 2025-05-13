@@ -27,6 +27,7 @@
         "symfony/flex": "^2.5.1",
         "symfony/framework-bundle": "7.2.*",
         "symfony/maker-bundle": "^1.63",
+        "symfony/monolog-bundle": "^3.10",
         "symfony/property-access": "7.2.*",
         "symfony/property-info": "7.2.*",
         "symfony/runtime": "7.2.*",
@@ -86,5 +87,9 @@
             "allow-contrib": false,
             "require": "7.2.*"
         }
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^4.1",
+        "fakerphp/faker": "^1.24"
     }
 }
