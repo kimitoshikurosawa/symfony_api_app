@@ -123,7 +123,7 @@ The frontend provides:
 ## 🧱 Project Structure
 
 ```
-├── api/                 # Symfony API Platform (src)
+├── src/                 # Symfony API Platform (src)
 │   ├── Product/
 │   │   ├── Product.php
 │   │   ├── ProductManager.php

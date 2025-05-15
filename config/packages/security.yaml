@@ -1,13 +1,13 @@
 security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
-        App\Entity\User: 'auto'
+        App\User\User: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
         users:
             entity:
-                class: App\Entity\User
+                class: App\User\User
                 property: email
     firewalls:
         dev:

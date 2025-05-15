@@ -1,7 +1,16 @@
 api_platform:
-    title: Hello API Platform
+    title: Nearby Products API
     version: 1.0.0
+    use_symfony_listeners: false
     defaults:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/'
+    swagger:
+        api_keys:
+            bearer:
+                name: Authorization
+                type: header

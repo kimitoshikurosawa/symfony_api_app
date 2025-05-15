@@ -17,13 +17,26 @@ doctrine:
         identity_generation_preferences:
             Doctrine\DBAL\Platforms\PostgreSQLPlatform: identity
         auto_mapping: true
+        dql:
+            string_functions:
+                acos: DoctrineExtensions\Query\Mysql\Acos
+                cos: DoctrineExtensions\Query\Mysql\Cos
+                sin: DoctrineExtensions\Query\Mysql\Sin
+                radians: DoctrineExtensions\Query\Mysql\Radians
+                pi: DoctrineExtensions\Query\Mysql\Pi
         mappings:
-            App:
-                type: attribute
+            Product:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                type: attribute
+                dir: '%kernel.project_dir%/src/Product'
+                prefix: 'App\Product'
+
+            User:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/User'
+                prefix: 'App\User'
+
         controller_resolver:
             auto_mapping: false
 

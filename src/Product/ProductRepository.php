@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Repository;
+namespace App\Product;
 
-use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,6 +13,28 @@ class ProductRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Product::class);
+    }
+
+    public function findNearby(float $lat, float $lng, float $radius): array
+    {
+        $qb = $this->createQueryBuilder('p');
+
+        $qb->addSelect(
+            '(
+            6371 * acos(
+                cos(radians(:lat)) * cos(radians(p.latitude)) *
+                cos(radians(p.longitude) - radians(:lng)) +
+                sin(radians(:lat)) * sin(radians(p.latitude))
+            )
+        ) AS HIDDEN distance'
+        )
+            ->having('distance <= :radius')
+            ->orderBy('distance', 'ASC')
+            ->setParameter('lat', $lat)
+            ->setParameter('lng', $lng)
+            ->setParameter('radius', $radius);
+
+        return $qb->getQuery()->getResult();
     }
 
     //    /**
